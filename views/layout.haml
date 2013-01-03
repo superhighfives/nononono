@@ -1,0 +1,32 @@
+!!!  
+%html  
+  %head  
+    %title NONONONO (We get it, okay?)
+    %meta{:name => "description", :content => "Tired of something? Worry no more. Let Michael Scott express your frustration."}
+    %meta{:name => "author", :content => "http://charliegleason.com/"}
+    %link{:href => "/images/favicon.ico", :rel => "shortcut icon"}
+    %link{:href => "/images/apple-touch-icon.png", :rel => "apple-touch-icon"}
+
+    %meta{:content => "NONONONO (We get it, okay?)", :property => "og:title"}
+    %meta{:content => "website", :property => "og:type"}
+    %meta{:content => "Tired of something? Worry no more. Let Michael Scott express your frustration.", :property => "og:description"}
+    %meta{:content => "http://nononono.co/", :property => "og:url"}
+    %meta{:content => "http://nononono.co/images/icons/apple-touch-icon.png", :property => "og:image"}
+    %meta{:content => "NONONONONO (We get it, okay?)", :property => "og:site_name"}
+
+    %link{:href => "/stylesheets/application.css", :rel => "stylesheet", :type => "text/css"}
+    %script{:src => "//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"}
+  %body  
+
+    =yield
+
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-XXXXXX-X']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
