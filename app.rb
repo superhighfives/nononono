@@ -8,8 +8,7 @@ require 'coffee-script'
 
 module NonononoUtils
   def self.getText(reference)
-    domain = reference.split('.').first.gsub!(/-/, ' ')
-    return domain unless domain == 'nononono'
+    reference.split('.').first.to_s.gsub('-', ' ')
   end
 end
 
