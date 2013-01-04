@@ -6,20 +6,40 @@ require 'sass'
 require 'maruku'
 require 'coffee-script'
 
+EASTER_EGGS = {
+  'trolling' => {
+    video: 'HyophYBP_w4',
+    text: 'There is always time for trolling'
+  },
+  'arrested-development' => {
+    video: 'YdGxkGk4taw',
+    text: 'You get the hell out'
+  }
+}
+
 module NonononoUtils
+  def self.getSubdomain(reference)
+    reference.split('.').first
+  end
   def self.getText(reference)
-    reference.split('.').first.to_s.gsub('-', ' ')
+    reference.to_s.gsub('-', ' ')
   end
 end
-
-helpers NonononoUtils
 
 configure do
   Compass.add_project_configuration(File.join(Sinatra::Application.root, 'config', 'compass.rb'))
 end
 
 get '/' do
-  haml :index, :locals => {:request_host => request.host}
+  subdomain = NonononoUtils.getSubdomain(request.host)
+  override = EASTER_EGGS[subdomain]
+  if override
+    haml :index, :locals => {:text => override[:text], :video => override[:video]}
+  else
+    text = "No more #{NonononoUtils.getText(subdomain)}"
+    video = '31g0YE61PLQ' # michael scott
+    haml :index, :locals => {:text => text, :video => video}
+  end
 end
 
 get '/stylesheets/:name.css' do
