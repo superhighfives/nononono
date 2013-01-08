@@ -14,6 +14,10 @@ EASTER_EGGS = {
   'arrested-development' => {
     video: 'YdGxkGk4taw',
     text: 'You get the hell out'
+  },
+  'csi-miami' => {
+    video: '_sarYH0z948',
+    text: 'No More CSI Miami!? No more puns?!'
   }
 }
 
