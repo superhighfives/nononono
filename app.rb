@@ -18,6 +18,11 @@ EASTER_EGGS = {
   'csi-miami' => {
     video: '_sarYH0z948',
     text: 'No more puns?!'
+  },
+  'tax-returns' => {
+    video: 'rtxUdbNKpK0',
+    text: 'No more tax returns',
+    params: '#t=14s'
   }
 }
 
@@ -38,7 +43,7 @@ get '/' do
   subdomain = NonononoUtils.getSubdomain(request.host)
   override = EASTER_EGGS[subdomain]
   if override
-    haml :index, :locals => {:text => override[:text], :video => override[:video]}
+    haml :index, :locals => {:text => override[:text], :video => override[:video], :params => override[:params]}
   else
     text = "No more #{NonononoUtils.getText(subdomain)}"
     video = '31g0YE61PLQ' # michael scott
