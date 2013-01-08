@@ -17,7 +17,7 @@ EASTER_EGGS = {
   },
   'csi-miami' => {
     video: '_sarYH0z948',
-    text: 'No More CSI Miami!? No more puns?!'
+    text: 'No more puns?!'
   }
 }
 
