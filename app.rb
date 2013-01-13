@@ -23,6 +23,10 @@ EASTER_EGGS = {
     video: 'rtxUdbNKpK0',
     text: 'No more tax returns',
     params: '#t=14s'
+  },
+  'star-trek' => {
+    video: 'EigIujKxDcE',
+    text: 'Not good enough'
   }
 }
 
