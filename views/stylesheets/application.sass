@@ -18,13 +18,19 @@ body
   opacity: 0.5
 
 .content
+  pointer-events: none
   position: relative
   z-index: 10
   height: 100%
-  +display-box
-  +box-orient(horizontal)
-  +box-align(center)
-  +box-pack(center)
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  justify-content: center
 
   h1
     font-weight: bold
